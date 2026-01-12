@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Project 2</title>
+    <style>
+        body{
+            background: #212121;
+            color: #fff;
+        }
+        *{
+            font-family: cursive;
+        }
+        h1{
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+        }
+        div{
+           display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        p{
+            font-weight: 600;
+            font-size: 20px;
+             border-radius: 16px;
+            background: #fff;
+            color: #212121;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is current date and time</h1>
+    <div><p id="current-time"></p></div>
+    
+    
+</body>
+<script>
+  function currentDateTime(){
+    const now = new Date();
+    const formatDateTime = now.toLocaleString();
+
+    document.getElementById("current-time").textContent = formatDateTime;
+  }
+  currentDateTime();
+  setInterval(currentDateTime, 1000);
+</script>
+</html>

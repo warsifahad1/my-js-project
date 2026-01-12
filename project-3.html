@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Project 3</title>
+    <style>
+        h1{
+            font-size: 32px;
+        }
+        .container{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 250px;
+            height: 250px;
+            margin-right: 20px;
+            border-radius: 26px;
+            border: 2px solid rgb(230, 213, 213);
+        }
+        #red{
+            background: red;
+        }
+        #green{
+            background: green;
+        }
+        #white{
+            background: white;
+        }
+        #blue{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>This is JavaScript Project 3</h1>
+    <h3>Color Changer Project</h3>
+    <div class="container">
+        <div class="box red" id="red"></div>
+        <div class="box green" id="green"></div>
+        <div class="box white" id="white"></div>
+        <div class="box blue" id="blue"></div>
+    </div>
+</body>
+<script>
+    const boxes = document.querySelectorAll(".box");
+    const body = document.body;
+
+    boxes.forEach((box) => {
+        box.addEventListener('click', (e) =>{
+            body.style.backgroundColor = e.target.id;
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | My First Project</title>
+</head>
+
+<body style="background-color: #212121; color: #ffff;">
+    <h1 style="text-align: center; font-weight: 600; font-size: 32px; color: whitesmoke; font-family: cursive;">Count
+    </h1>
+    <h3 id="count" style="text-align: center; font-family: cursive; font-weight: 500; font-size: 28px;">0</h3>
+    <div style="text-align: center;"><button
+            style="text-align: center; font-family: cursive; border: none; padding: 10px; width: 100px; font-weight: 800; border-radius: 12px; margin-right: 10px;"
+            onclick="decrease()">-</button>
+        <button style="text-align: center; font-family: cursive; border: none; padding: 10px; width: 100px; font-weight: 800; border-radius: 12px; margin-right: 10px;"
+            onclick="reset()"><img style="color: #212121;" src="Images/reset_2.svg" alt=""></button>
+        <button style="text-align: center; font-family: cursive; border: none; padding: 10px; width: 100px; font-weight: 800; border-radius: 12px; margin-right: 10px;"
+            onclick="increase()">+</button>
+
+    </div>
+</body>
+<script>
+    let count = 0;
+    function decrease() {
+        count--;
+        document.getElementById("count").innerText = count;
+    }
+    function increase() {
+        if(count < 10){
+            count++;
+        }
+        document.getElementById("count").innerText = count
+    }
+    function reset() {
+        count = 0;
+        document.getElementById("count").innerText = count
+    }
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        ul li {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: green;
+        }
+        .next{
+        display: flex;
+        justify-content: space-around;
+       }
+       .next button{
+        color: white;
+        background: #212121;
+        padding: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+       }
+       .next button a{
+        color: white;
+        text-decoration: none;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="next">
+        <button><a href="">Previous</a></button>
+        <button><a href="">Next</a></button>
+    </div>
+
+    <h2>To Do List App</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button id="addBtn">Add</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const addBtn = document.getElementById("addBtn");
+        const list = document.getElementById("list");
+
+        addBtn.addEventListener("click", () => {
+            if (taskInput.value === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            // create li
+            const li = document.createElement("li");
+            li.innerText = taskInput.value;
+
+            // toggle done
+            li.addEventListener("click", () => {
+                li.classList.toggle("done");
+            });
+
+            // add li to ul
+            list.appendChild(li);
+
+            // clear input
+            taskInput.value = "";
+        });
+
+    </script>
+</body>
+
+</html>

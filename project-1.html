@@ -5,9 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS | My First Project</title>
+    <style>
+        .next{
+        display: flex;
+        justify-content: space-around;
+       }
+       .next button{
+        color: white;
+        background: #212121;
+        padding: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+       }
+       .next button a{
+        color: white;
+        text-decoration: none;
+       }
+    </style>
 </head>
 
 <body style="background-color: #212121; color: #ffff;">
+    <div class="next">
+        <button><a href="project-1.html">Previous</a></button>
+        <button><a href="project_2.html">Next</a></button>
+    </div>
+
+
     <h1 style="text-align: center; font-weight: 600; font-size: 32px; color: whitesmoke; font-family: cursive;">Count
     </h1>
     <h3 id="count" style="text-align: center; font-family: cursive; font-weight: 500; font-size: 28px;">0</h3>
@@ -24,7 +48,9 @@
 <script>
     let count = 0;
     function decrease() {
-        count--;
+        if(count > 0){
+            count--;
+        }
         document.getElementById("count").innerText = count;
     }
     function increase() {

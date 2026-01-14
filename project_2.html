@@ -30,9 +30,31 @@
             color: #212121;
             padding: 10px 10px;
         }
+
+        .next{
+        display: flex;
+        justify-content: space-around;
+       }
+       .next button{
+        color: white;
+        background: #212121;
+        padding: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+       }
+       .next button a{
+        color: white;
+        text-decoration: none;
+       }
     </style>
 </head>
 <body>
+    <div class="next">
+        <button><a href="project-1.html">Previous</a></button>
+        <button><a href="project-3.html">Next</a></button>
+    </div>
+
     <h1>This is current date and time</h1>
     <div><p id="current-time"></p></div>
     

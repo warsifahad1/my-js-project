@@ -1,57 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My JS Project 6 | To Do list</title>
-    <style>
-        h1{
-            margin: 20px;
-        }
-       .container{
-        margin: 20px;
-        background: #212121;
-        color: whitesmoke;
-        border-radius: 16px;
-        padding: 10px;
-       }
-       li{
-        margin-top: 15px;
-        font-weight: 700;
-        font-size: 20px;
-        list-style-type: disc;
-        cursor: pointer;
-       }
-       .done{
-        text-decoration: line-through;
-        color: green;
-        background: url();
-       }
-       .next{
-        display: flex;
-        justify-content: space-around;
-       }
-       .next button{
-        color: white;
-        background: #212121;
-        padding: 10px;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-       }
-       .next button a{
-        color: white;
-        text-decoration: none;
-       }
-    </style>
-</head>
-<body>
-    <div class="next">
-        <button><a href="project-5.html">Previous</a></button>
-        <button><a href="project-7.html">Next</a></button>
-    </div>
-    <h1>This is To do list copy project</h1>
-    <div class="container">
+<h1>This is To do list copy project</h1>
+    <div class="container-project6">
         <ul>
             <li class="list-item">Exercise</li>
             <li class="list-item">Reading</b></li>
@@ -61,14 +9,3 @@
             <li class="list-item">Singing</li>
         </ul>
     </div>
-</body>
-<script>
-    const listItem = document.querySelectorAll(".list-item");
-
-  listItem.forEach((listItem) => {
-    listItem.addEventListener('click', () => {
-        listItem.classList.toggle("done");
-    }); 
-  });
-</script>
-</html>

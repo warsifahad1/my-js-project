@@ -1,82 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS | Project 4</title>
-    <style>
-    .grid-box{
-        display: none;
-        max-width: 100%;
-        margin: 30px;
-        text-align: center;
-        background: #212121;
-        border: 1px solid wheat;
-        border-radius: 16px;
-    }
-    .link{
-        margin-top: 20px;
-    }
-    .link a{
-        color: white;
-        text-decoration: none;
-
-    }
-    .link:last-child{
-        margin-bottom: 20px;
-    }
-    .close{
-        color: white;
-        text-align: right;
-        cursor: pointer;
-        margin: 20px;
-    }
-
-    .next{
-        display: flex;
-        justify-content: space-around;
-       }
-       .next button{
-        color: white;
-        background: #212121;
-        padding: 10px;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-       }
-       .next button a{
-        color: white;
-        text-decoration: none;
-       }
-    </style>
-</head>
-<body>
-    <div class="next">
-        <button><a href="project-3.html">Previous</a></button>
-        <button><a href="project-5.html">Next</a></button>
-    </div>
-
-    <h1>This is Heading</h1>
-    <button id="menuBtn">download</button>
-    <div class="grid-box">
-        <div class="close" id="close">Close</div>
-        <div class="link"><a href="#">This is link</a></div>
-        <div class="link"><a href="#">This is link</a></div>
-        <div class="link"><a href="#">This is link</a></div>
-        <div class="link"><a href="#">This is link</a></div>
-    </div>
-</body>
-<script>
-    const menuBtn = document.getElementById("menuBtn");
-    const gridBox = document.querySelector(".grid-box");
-    const cross = document.getElementById("close");
-    
-    menuBtn.addEventListener('click', () => {
-        gridBox.style.display = "block";
-    });
-    
-    cross.addEventListener('click', () => {
-        gridBox.style.display = "none";
-    });
-</script>
-</html>
+<h1>This is Heading</h1>
+<button id="menuBtn">download</button>
+<div class="grid-box">
+    <div class="close" id="close">Close</div>
+    <div class="link"><a href="#">This is link</a></div>
+    <div class="link"><a href="#">This is link</a></div>
+    <div class="link"><a href="#">This is link</a></div>
+    <div class="link"><a href="#">This is link</a></div>
+</div>

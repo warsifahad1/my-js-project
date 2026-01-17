@@ -4,35 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My JS | Project</title>
-    <style>
-        body{
-            background: #212121;
-            color: white;
-        }
-        .links{
-            display: block;
-            margin: 20px;
-        }
-        div a{
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-        }
-    </style>
+    <title>My JS Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <h1>Here are my JS projects</h1>
-    <div class="links">
-        <div><a href="project-1.html">Project 1</a></div>
-        <div><a href="project_2.html">Project 2</a></div>
-        <div><a href="project-3.html">Project 3</a></div>
-        <div><a href="project-4.html">Project 4</a></div>
-        <div><a href="project-5.html">Project 5</a></div>
-        <div><a href="project-6.html">Project 6</a></div>
-        <div><a href="project-7.html">Project 7</a></div>
+<body id="body">
+    <h1>Here My all JavaScript projects</h1>
+    <div class="next-prev-btn">
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
     </div>
-</body>
+    <div id="projectContainer"></div>
 
+    <script src="app.js"></script>
+</body>
 </html>

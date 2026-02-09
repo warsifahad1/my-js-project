@@ -205,3 +205,13 @@ ul li {
     padding: 6px;
     background: white;
 }
+/*---project-9---*/
+.project-9{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.display-flex{
+    display: inline-grid;
+}

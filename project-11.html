@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List App | JS Project</title>
+    <style>
+        body {
+            background: black;
+            color: whitesmoke;
+        }
+
+        .done {
+            color: green;
+            text-decoration: line-through;
+        }
+
+        li {
+            cursor: pointer;
+            padding: 6px 10px;
+            margin: 6px 0;
+            border-radius: 6px;
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease,
+                transform 0.2s ease,
+                opacity 0.2s ease;
+        }
+
+
+        .task-status {
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .task-status div{
+            border: 1px solid whitesmoke;
+            border-radius: 12px;
+            padding: 5px 4px;
+        }
+        .container input{
+            width: auto;
+            height: auto;
+            font-weight: 700;
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is To do List App</h1>
+    <h3>This have advance Features</h3>
+    <p>it has advance Features than Previous version</p>
+
+    <div class="container">
+        <input type="text" placeholder="Enter a Task" id="input">
+        <button id="addBtn">Add</button>
+
+
+        <div class="task-status">
+
+            <div class="not complete">
+                <h2>Not Completed Task</h2>
+                <ul id="not-complete"></ul>
+
+            </div>
+
+            <div class="complete">
+                <h2>Completed Task</h2>
+                <ul id="complete"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const taskInput = document.getElementById("input");
+    const addBtn = document.getElementById("addBtn");
+    const complete = document.getElementById("complete");
+    const notComplete = document.getElementById("not-complete");
+
+    addBtn.addEventListener("click", () => {
+        if (taskInput.value === "") {
+            alert("Enter A task");
+            return;
+        }
+
+        const li = document.createElement("li");
+        li.innerText = taskInput.value;
+        li.classList.contains("not-complete")
+
+
+        //Toggle Complete
+        li.addEventListener("click", () => {
+            if (li.classList.contains("not-complete")) {
+                li.classList.remove("not-complete");
+                li.classList.add("complete");
+
+                complete.appendChild(li);
+            } else {
+                li.classList.remove("complete");
+                li.classList.add("not-complete");
+
+                notComplete.appendChild(li);
+            }
+
+
+        });
+
+        notComplete.appendChild(li);
+        //Clear 
+        taskInput.value = "";
+
+    })
+</script>
+
+</html>

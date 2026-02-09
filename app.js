@@ -5,7 +5,10 @@ const projects = [
     "project-4.html",
     "project-5.html",
     "project-6.html",
-    "project-7.html"
+    "project-7.html",
+    "project-8.html",
+    "project-9.html",
+    "project-10.html"
 ]; // array
 
 let currentIndex = 0;
@@ -49,6 +52,13 @@ function loadProject(index) {
                     initProject7();
                     break;
 
+                case "project-8.html":
+                    calculateBmi();
+                    break;
+
+                case "project-9.html":
+                    initProject9();
+                    break;
             }
         });
 }
@@ -155,7 +165,7 @@ function initProject5() {
     };
 
     window.allClear = function () {
-         display.value = "0";
+        display.value = "0";
     };
 
     window.clearChar = function () {
@@ -178,7 +188,7 @@ function initProject5() {
 }
 
 //project 6
-function initProject6(){
+function initProject6() {
     const listItem = document.querySelectorAll(".list-item");
 
     listItem.forEach((listItem) => {
@@ -189,30 +199,85 @@ function initProject6(){
 }
 
 //project 7
-function initProject7(){
+function initProject7() {
     const taskInput = document.getElementById("taskInput");
-        const addBtn = document.getElementById("addBtn");
-        const list = document.getElementById("list");
+    const addBtn = document.getElementById("addBtn");
+    const list = document.getElementById("list");
 
-        addBtn.addEventListener("click", () => {
-            if (taskInput.value === "") {
-                alert("Please enter a task");
-                return;
-            }
+    addBtn.addEventListener("click", () => {
+        if (taskInput.value === "") {
+            alert("Please enter a task");
+            return;
+        }
 
-            // create li
-            const li = document.createElement("li");
-            li.innerText = taskInput.value;
+        // create li
+        const li = document.createElement("li");
+        li.innerText = taskInput.value;
 
-            // toggle done
-            li.addEventListener("click", () => {
-                li.classList.toggle("done");
-            });
-
-            // add li to ul
-            list.appendChild(li);
-
-            // clear input
-            taskInput.value = "";
+        // toggle done
+        li.addEventListener("click", () => {
+            li.classList.toggle("done");
         });
+
+        // add li to ul
+        list.appendChild(li);
+
+        // clear input
+        taskInput.value = "";
+    });
 }
+
+///Project 8
+
+function calculateBmi() {
+    let weight = document.getElementById("weight").value;
+    let heightCm = document.getElementById("height").value;
+
+    //cm => m
+    let height = heightCm / 100;
+
+    // BMI formula 
+    let bmi = weight / (height * height);
+
+    document.querySelector("[name=display]").value = bmi.toFixed(2);
+
+    if (bmi < 20) {
+        document.getElementById("result").innerText = "underweight";
+    } else if (bmi < 35) {
+        document.getElementById("result").innerText = "Normal";
+    } else if (bmi < 45) {
+        document.getElementById("result").innerText = "overweight";
+    } else {
+        document.getElementById("result").innerText = "obese";
+    }
+}
+
+//Project 9
+
+function initProject9() {
+    document.getElementById("areaBtn")
+        .addEventListener("click", area);
+
+    document.getElementById("tsAreaBtn")
+        .addEventListener("click", tSurfaceArea);
+}
+
+function area() {
+    let radius = document.getElementById("radius").value;
+    let height = document.getElementById("height").value;
+    let pi = 3.14;
+
+    let area = 2 * pi * radius * height;
+    document.querySelector("[name=display]").value = area.toFixed(2);
+}
+
+function tSurfaceArea() {
+    let radius = document.getElementById("radius").value;
+    let height = document.getElementById("height").value;
+    let pi = 3.14;
+
+    let tsArea = 2 * pi * radius * (radius + height);
+    document.querySelector("[name=display]").value = tsArea.toFixed(2);
+}
+
+

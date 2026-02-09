@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 10 | JS series</title>
+    <style>
+        body {
+            color: white;
+            background: #212121;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is my JS Project 10</h1>
+    <h2>Count app </h2>
+    <p>With user defined skippable number</p>
+
+    <h2 id="count">0</h2>
+    <div class="container">
+        <button onclick="decrease()">-</button>
+        <button onclick="reset()">reset</button>
+        <button onclick="increase()">+</button>
+        <input type="number" onclick="getSkip()" name="skippable">
+    </div>
+</body>
+<script>
+    let count = 0;
+    
+    function getSkip(){
+        let skip = document.querySelector("[name=skippable]").value;
+        return Number(skip) || 1; //if empty defualt 1
+
+    }
+     
+    function decrease(){
+        count -= getSkip();
+        document.getElementById("count").innerText = count;
+    }
+    function increase(){
+        count += getSkip();
+        document.getElementById("count").innerText = count;
+    }
+    function reset(){
+        count = 0;
+        document.getElementById("count").innerText = count;
+    }
+
+</script>
+
+</html>
